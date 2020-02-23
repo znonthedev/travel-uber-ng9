@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "10"
+  - '10'
 dist: trusty
 sudo: required
 branches:
@@ -12,3 +12,10 @@ script:
   - ng lint
   - npm run test-headless
   - ng build --prod --base-href https://znonthedev.github.io/travel-uber-ng9/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/travel-uber-ng9/
+  on:
+    branch: master
