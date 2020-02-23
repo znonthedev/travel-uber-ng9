@@ -18,7 +18,8 @@
       "es2018",
       "dom"
     ],"paths": {
-      "@app/*": ["src/app/core/*"]
+      "@app/*": ["src/app/core/*"],
+      "@env": ["src/environments/environment"]
     }
   },
   "angularCompilerOptions": {
