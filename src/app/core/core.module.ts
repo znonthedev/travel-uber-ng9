@@ -1,15 +1,15 @@
-import { NgModule, Optional, SkipSelf } from "@angular/core";
-import { throwIfAlreadyLoaded } from "./gaurds/module-import.guard";
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { StoreModule } from "@ngrx/store";
-import { reducers, metaReducers } from "@app/core.state";
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
-import { environment } from "@env";
-import { StoreRouterConnectingModule } from "@ngrx/router-store";
-import { CustomSerializer } from "./router/custom-serializer.service";
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { throwIfAlreadyLoaded } from './gaurds/module-import.guard';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from '@app/core.state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '@env';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CustomSerializer } from './router/custom-serializer.service';
 
 @NgModule({
   imports: [
@@ -31,7 +31,7 @@ import { CustomSerializer } from "./router/custom-serializer.service";
     }),
     StoreRouterConnectingModule.forRoot({ serializer: CustomSerializer }),
     !environment.production
-      ? StoreDevtoolsModule.instrument({ name: "Travel Uber" })
+      ? StoreDevtoolsModule.instrument({ name: 'Travel Uber' })
       : []
   ],
   exports: [
@@ -46,6 +46,6 @@ import { CustomSerializer } from "./router/custom-serializer.service";
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-    throwIfAlreadyLoaded(parentModule, "CoreModule");
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 }

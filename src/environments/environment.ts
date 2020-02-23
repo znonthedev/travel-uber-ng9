@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   test: false,
-  environmentName: "Dev"
+  environmentName: 'Dev'
 };
 
 /*
